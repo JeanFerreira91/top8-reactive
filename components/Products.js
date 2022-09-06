@@ -1,21 +1,17 @@
-import { View } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import React from 'react';
-import CategoryCard from './CategoryCard';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import ProductsCard from './ProductsCard';
 
 // Variable to hold que QueryClient
 const queryClient = new QueryClient();
 
-const Categories = () => {
+const Products = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <View>
-          <View className="mb-3 border-b border-[#1f306e]">
-          <CategoryCard />
-          </View>
-      </View>
+        <ProductsCard />
     </QueryClientProvider>
   )
 }
 
-export default Categories
+export default Products

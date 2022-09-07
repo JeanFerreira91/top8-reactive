@@ -29,15 +29,15 @@ const ProductsCard = () => {
                         className="items-center justify-between pb-5 border-b-2 border-[#1f306e]"
                     >
                         <Image
-                            source={{ uri: data[index].item_pictures }}
+                            source={{ uri: item.item_pictures }}
                             className="h-96 w-96"
                         />
                         <View className="items-start">
-                            <Text className="text-xl font-bold pb-2">{data[index].item_description}</Text>
+                            <Text className="text-xl font-bold pb-2">{item.item_description}</Text>
                             <TouchableOpacity
                                 className="rounded-lg bg-[#1f306e] p-4 ml-24"
                                 // Opening the product on the Browser
-                                onPress={() => Linking.openURL(data[index].url_amazon)}
+                                onPress={() => Linking.openURL(item.url_amazon)}
                             >
                                 <Text className="text-center text-white text-lg font-bold">View on Amazon</Text>
                             </TouchableOpacity>

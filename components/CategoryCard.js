@@ -21,7 +21,7 @@ const CategoryCard = () => {
     <View>
       {/* View to handle the title of the component and icon */}
       <View className="mt-4 flex-row items-center justify-between px-4">
-        <Text className="font-bold">Categories</Text>
+        <Text className="font-bold">All Categories</Text>
         <ArrowRightIcon className="w-5 h-5" color={'#1f306e'} />
       </View>
       {/* Displaying a View which scrolls horizontally showing all the Categories */}

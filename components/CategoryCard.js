@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import { View, Text, TouchableOpacity, ScrollView, Linking } from "react-native";
 import React from "react";
 import { ArrowRightIcon } from "react-native-heroicons/solid";
 import { useQuery } from "@tanstack/react-query";
@@ -40,7 +40,10 @@ const CategoryCard = () => {
             data.map((item, index) => {
               return (
                 <View key={index}>
-                  <TouchableOpacity className="relative mr-4">
+                  <TouchableOpacity
+                    className="relative mr-4"
+                    // onPress={() => Linking.openURL(item.categoria_link)}
+                  >
                     <Text className="font-bold text-[#1f306e]">{item.name}</Text>
                   </TouchableOpacity>
                 </View>

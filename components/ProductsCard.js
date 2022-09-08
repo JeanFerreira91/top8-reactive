@@ -4,13 +4,15 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
-  Linking,
 } from "react-native";
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import { FireIcon } from "react-native-heroicons/solid";
+import { useNavigation } from "@react-navigation/native";
 
 const ProductsCard = () => {
+  // Navigation Hook to navigate to the ProductScreen
+  const navigation = useNavigation();
   // Query to fetch Products data from the API
   const { isLoading, error, data } = useQuery(["repoData"], () =>
     fetch("https://amazfunels.herokuapp.com/api/").then((res) => res.json())
@@ -58,11 +60,11 @@ const ProductsCard = () => {
                   </Text>
                   <TouchableOpacity
                     className="rounded-lg bg-[#1f306e] p-4 ml-24"
-                    // Opening the product on the Browser
-                    onPress={() => Linking.openURL(item.url_amazon)}
+                    // Sending to the Product Screen
+                    onPress={() => navigation.push("Product", { item })}
                   >
                     <Text className="text-center text-white text-md font-bold">
-                      View on Amazon
+                      View Product
                     </Text>
                   </TouchableOpacity>
                 </View>

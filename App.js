@@ -1,4 +1,5 @@
 import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -8,7 +9,7 @@ export default function App() {
   const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName='Home'>
         {/* HomeScreen */}
         <Stack.Screen
           name="Home"
@@ -23,6 +24,15 @@ export default function App() {
               fontWeight: 'bold',
               color: '#fff',
             },
+          }}
+        />
+        {/* ProductScreen */}
+        <Stack.Screen
+          name="Product"
+          component={ProductScreen}
+          options={{
+            presentation: 'modal',
+            headerShown: false,
           }}
         />
       </Stack.Navigator>
